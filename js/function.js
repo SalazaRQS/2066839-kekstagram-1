@@ -1,11 +1,21 @@
 // 1. Функция палиндром
 
-function checkPalindrome(string) {
-  string = string.toLowerCase().replace(/\s/g, '');
-  return string === string.split('').reverse().join('');
-}
+const isPalindrome = (string) => {
+  const tempString = string
+    .toLowerCase()
+    .replace(/\s/g, '');
+  const reverseString = tempString
+    .split('')
+    .reverse()
+    .join('');
+  return tempString === reverseString;
+};
 
-checkPalindrome();
+// console.log(isPalindrome('Шалаш'));
+// console.log(isPalindrome('ТоПоТ'));
+// console.log(isPalindrome('Лёша на полке клопа нашёл '));
+
+isPalindrome();
 
 // 2. Функция извлечения чисел
 
@@ -46,19 +56,9 @@ replaceString();
 
 // 4. Функция для проверки длины строки.
 
-function getLength(string, maxLingth) {
-  let answer;
-  if (string.length <= maxLingth) {
-    answer = true;
-  } else if (string.length > maxLingth) {
-    answer = false;
-  } else {
-    answer = false;
-  }
-  return answer;
-}
-
+const isCheckString = (string, length) =>
+  string.length <= length;
 
 // console.log(getLength('проверяемая строка', 20));
 
-getLength();
+isCheckString();
