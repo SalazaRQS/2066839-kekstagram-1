@@ -35,15 +35,7 @@ getNumber();
 
 function replaceString(str, length, addSymbol) {
   for (let i = 0; i < length; i++) {
-    addSymbol = addSymbol.slice(0);
-    if (i === length) {
-      break;
-    }
-  } for (let i = 0; i < length; i++) {
     str = addSymbol.slice(0, length - str.length) + str;
-    if (i === length) {
-      break;
-    }
   }
   return str;
 }
