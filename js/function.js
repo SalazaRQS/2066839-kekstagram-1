@@ -19,13 +19,15 @@ isPalindrome();
 
 // 2. Функция извлечения чисел
 
-function getNumber(string) {
-  if (string === Number(string)) {
-    return Number(string);
-  } else {
-    return string.replace(/\D/g, '');
+const getNumber = (string) => {
+  let result = '';
+  for (let i = 0; i < string.length; i++) {
+    if (!Number.isNaN(parseInt(string.at(i), 10))) {
+      result += string.at(i);
+    }
   }
-}
+  return parseInt(result, 10);
+};
 
 getNumber();
 
